@@ -9,13 +9,12 @@ arr2 = list(map(int, input_str2.split()))
 
 indices_dict = {}
 
-for num1 in arr1:
-    if num1 not in indices_dict:
-        indices_dict[num1] = []
+for i, num in enumerate(arr2):
+    if num not in indices_dict:
+        indices_dict[num] = [i]
+    else:
+        indices_dict[num].append(i)
 
-    for i, num2 in enumerate(arr2):
-        if num1 == num2:
-            indices_dict[num1].append(i)
-
-for num, indices in indices_dict.items():
-    print(f"Element {num} from array1 is found at indices {indices} in array2.")
+for num in arr1:
+    if num in indices_dict:
+        print(f"Element {num} from array1 is found at indices {indices_dict[num]} in array2.")

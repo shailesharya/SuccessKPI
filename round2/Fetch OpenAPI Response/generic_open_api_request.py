@@ -18,7 +18,9 @@ def get_request(api_endpoint):
 def explore(json_data, parent_key=''):
     if isinstance(json_data, dict):
         for key, value in json_data.items():
+            print("Key:",key)
             new_key = f"{parent_key}.{key}" if parent_key else key
+            print("New Key:",new_key)
             if isinstance(value, (dict, list)):
                 explore(value, new_key)
             else:

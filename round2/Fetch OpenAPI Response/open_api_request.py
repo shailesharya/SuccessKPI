@@ -16,7 +16,6 @@ def get_request(api_endpoint):
                     id = item.get("id")
                     title = item.get("title")
                     body = item.get("body")
-                    
                     print(f"userId: {userId}\nid: {id}\ntitle: {title}\nbody: {body}\n")
             elif isinstance(response_data, dict):
                 userId = response_data.get("userId")
@@ -34,5 +33,6 @@ def get_request(api_endpoint):
 
 
 if __name__ == "__main__":
-    api_endpoint = input("Enter API endpoint: ")
+    # api_endpoint = input("Enter API endpoint: ")
+    api_endpoint = "https://jsonplaceholder.typicode.com/posts/1"
     get_request(api_endpoint)
